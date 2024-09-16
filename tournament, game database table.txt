@@ -1,0 +1,17 @@
+CREATE TABLE Game (
+    GameID INT PRIMARY KEY,
+    GameDate DATE NOT NULL,
+    GameTime TIME NOT NULL,
+    Location VARCHAR NOT NULL,
+    TournamentID INT,
+    FOREIGN KEY (TournamentID) REFERENCES Tournament(TournamentID)
+);
+
+CREATE TABLE Tournament (
+    TournamentID INT  PRIMARY KEY,
+    TournamentName VARCHAR NOT NULL,
+    StartDate DATE NOT NULL,
+    EndDate DATE NOT NULL,
+    SportID INT,
+    FOREIGN KEY (SportID) REFERENCES Sport(SportID)
+);
